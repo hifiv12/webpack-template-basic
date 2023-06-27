@@ -15,12 +15,14 @@
     * "webpack-cli": "^5.1.4",
     * "webpack-dev-server": "^4.0.0-rc.1"
   - package.json setting
+
   ```package.json
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   ```
     * "dev" : 개발용 
     * "build" : 배포용 
+
   - ./index.html 생성 및 reset.css 세팅
   - ./js/main.js 세팅
   - ./webpack.config.js 파일 생성
@@ -67,6 +69,7 @@
     npm i -D html-webpack-plugin
   ```
     * html-webpack-plugin 개발용 설치
+
   ```webpack.config.js
     const HtmlPlugin = require('html-webpack-plugin')
 
@@ -205,4 +208,20 @@
 
 9. netlify 배포
   - webpack으로 배포가 이뤄지는 구조는 netlify 배포의 방식이 다름
-  
+  - 로그인 후 add new site
+  - github 선택 후 작성된 repository 까지 접근
+  - Basic build setting가 중요함
+    * build command > npm run build
+    * publish directory > dist/ 
+    * 위와 같이 세팅
+  - 기존에 학습하던 parcel-template-basic 도 명령어와 디렉토리 세팅이 달라지지 않았다면 동일한 방법으로 사이트 추가
+
+10. NPX, Degit
+  - npx degit [hifiv12/webpack-template-basic] [webpack-template-test]
+    * 터미널에 위치한 경로에서 github에 있는 레포지토리를 다운로드하는 기능
+    * npx는 node.js 설치했기에 사용 가능
+    * 원격의 장소로 부터 현재 위치한 로컬 위치에 다운로드
+    * [] [] 첫번째 구문은 다운로드할 계정의 레포지토리 위치, 두번째 구문은 다운로드 하면서 지정할 이름
+  - git clone vs npx degit 
+    * git clone은 버전을 계승하여 버전 업을 하는것
+    * npx degit은 템플릿을 받는 것 > 그래서 처음버전부터 시작한다는 의미
